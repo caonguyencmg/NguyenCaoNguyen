@@ -9,17 +9,45 @@
 </head>
 
 <body>
-
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
   <form onsubmit="return !1">
-    <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
-
-    <button>CONFIRM SWAP</button>
+    <div class="form-content">
+      <div class="swap">
+        <div class="swap-main">
+          <div class="swap-item">
+            <div class="select-item">
+              <select name="cars" id="in-cars" onchange="convertCurrency()" class="select-cart">
+              </select>
+              <div >
+                <img class="nation-logo" id="top-nation" src="https://st.quantrimang.com/photos/image/2021/09/05/Co-Vietnam.png" alt="">
+              </div>
+            </div>
+            <div>
+              <input id="input-amount" oninput="convertCurrency()" value="0" class="input-df" />
+            </div>
+          </div>
+          <div class="trans-icon">
+            <svg width="41" height="40" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5004 21.5999C17.8023 21.5999 22.1004 17.3018 22.1004 11.9999C22.1004 6.69797 17.8023 2.3999 12.5004 2.3999C7.19846 2.3999 2.90039 6.69797 2.90039 11.9999C2.90039 17.3018 7.19846 21.5999 12.5004 21.5999Z" fill="#4FC814"/>
+              <path d="M13.9695 8.61079C13.6884 8.32961 13.2325 8.32961 12.9513 8.61079C12.6701 8.89196 12.6701 9.34784 12.9513 9.62902L14.6022 11.2799H8.66043C8.26278 11.2799 7.94043 11.6023 7.94043 11.9999C7.94043 12.3975 8.26278 12.7199 8.66043 12.7199H14.6022L12.9513 14.3708C12.6701 14.652 12.6701 15.1078 12.9513 15.389C13.2325 15.6702 13.6884 15.6702 13.9695 15.389L16.8495 12.509C17.1307 12.2278 17.1307 11.772 16.8495 11.4908L13.9695 8.61079Z" fill="white"/>
+            </svg>
+          </div>
+          <div class="swap-item">
+            <div class="select-item">
+              <select name="cars" id="out-cars" onchange="convertCurrency()" class="select-cart">
+              </select>
+              <div >
+                <img class="nation-logo" id="bottom-nation" src="https://eurotravel.com.vn/wp-content/uploads/2023/05/quoc-ky-dau-tien-cua-nuoc-my-voi-13-sao-dai-dien-cho-13-bang-ngay-so-khai.png" alt="">
+              </div>
+            </div>
+            <div>
+              <input id="output-amount" disabled value="0" class="input-df" />
+            </div>
+          </div>
+        </div>
+        <div id="error-mess"></div>
+      </div>
+    </div>
   </form>
   <script src="script.js"></script>
 </body>
